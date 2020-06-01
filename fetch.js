@@ -19,7 +19,7 @@ function buildMenuItems(itemArray) {
             //price
             let createdItem = document.createElement('article')
             createdItem.innerText = item;
-            // section.appendChild(createdItem)
+            section.appendChild(createdItem)
         })
     })
 }
@@ -35,7 +35,7 @@ function printLines(entries) {
         if (entry.content.$t === '') {
             return;
         } else {
-            menuItems.push((entry.content.$t).slice(8, -1))
+            menuItems.push((entry.content.$t).slice(7, -1))
         }
     })
 
