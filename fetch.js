@@ -1,19 +1,16 @@
 import * as parse from './parse.js';
 import {menuItem, MenuSubSection} from './builder.js'
 //fetches the endpoint
-function buildMenuItems(itemArray) {
-    console.log(itemArray)
-    const section = document.querySelector('.section--breakfast-favorites')
-
+function buildMenuItems(itemArray, section) {
+  
         itemArray.forEach(item => {
     
             if(item.price == '' && item.title != '' && item.isItem == ''){
                 let createdCat = new MenuSubSection(item);
                 section.appendChild(createdCat.render())
             }
-
             else if(item.isItem != 'TRUE'){
-                console.log(item.title)
+                return;
             }
             else if(item.isItem == 'TRUE'){
                 let createdItem = new menuItem(item)
@@ -26,8 +23,9 @@ function buildMenuItems(itemArray) {
 
 
 function build(items) {
-
-    buildMenuItems(items)
+  const section = document.querySelectorAll('.section--menucontent')
+  section.forEach(sect => buildMenuItems(items, sect))
+    // buildMenuItems(items)
 
 }
 
