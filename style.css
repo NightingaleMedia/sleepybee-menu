@@ -41,8 +41,8 @@ h1 {
 }
 
 .order-now{
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     background-color: var(--sb-blue--med);
     border-radius: 100%;
     color: white;
@@ -53,7 +53,7 @@ h1 {
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 5%;
+    bottom: 2%;
     right: 2%;
     z-index: 100;
     cursor: pointer;
@@ -66,7 +66,7 @@ h1 {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: all 0.2s ease-in;
+    transition: all 0.8s ease;
 }
 
 .menu-logo {
@@ -115,6 +115,7 @@ section:last-of-type {
     width: 100%;
     padding: 0.5em;
     margin-top: 0.5em;
+    cursor: pointer;
 }
 
 .section--header>span {
@@ -131,7 +132,7 @@ section:last-of-type {
 .section--menucontent {
     visibility: hidden;
     display: none;
-    max-width: 700px;
+    max-width: 550px;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;

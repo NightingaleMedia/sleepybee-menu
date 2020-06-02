@@ -7,9 +7,11 @@ document.addEventListener('scroll', handleScroll)
 
 function setHeaderHeight(){
         let menuHeight = ((sectionHeader[1].offsetHeight) * (sectionHeader.length + 1))
- 
+        let hasOpen = [...menuSection].find(section => section.classList.contains('open'))
+        if(hasOpen == undefined){ 
         menuHeader.style.height = `${window.innerHeight - menuHeight}px`;
         menuHeader.classList.remove('menu-collapsed');
+        }
 }
 function initialize(){
     // turn on toggling
@@ -22,15 +24,10 @@ function getOpenSection() {
     return document.querySelector('.open')
 }
 
-const addMiniMenu = (section) => {
-  
-
+const addMiniMenu = () => {
     let result = ((window.innerHeight - (menuHeader.offsetHeight + getOpenSection().offsetHeight)) / menuSection.length) + 10 ;
-    
     (result < 25) ? result = 30 : result;
     root.style.setProperty(`--mini-menu-size`, result + 'px');
-
-    console.log('result: '+ result)
 }
 
 function handleScroll(e) {
@@ -47,7 +44,7 @@ function toggleSection() {
         parent.classList.remove('open')
 
         menuSection.forEach(section => section.classList.remove('mini-menu'))
-        setTimeout(setHeaderHeight, 1000);
+        setTimeout(setHeaderHeight, 2000);
     } else {
         handleScroll();
         menuSection.forEach(section => section.classList.remove('open'))
@@ -57,7 +54,7 @@ function toggleSection() {
             section.removeAttribute('style')
             if (!section.classList.contains('open')) {
                 section.classList.add('mini-menu');
-                setTimeout(()=>{addMiniMenu(section)}, 400);
+                setTimeout(()=>{addMiniMenu()}, 400);
             }
         })
     }
