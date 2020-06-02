@@ -1,0 +1,29 @@
+{
+  "name": "sleepybeemenu",
+  "version": "1.0.0",
+  "description": "an interactive menu system for sleepy bee",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NightingaleMedia/sleepybee-menu.git"
+  },
+  "keywords": [
+    "menu",
+    "ux",
+    "ui",
+    "parse",
+    "xml"
+  ],
+  "author": "Nightingale Media",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NightingaleMedia/sleepybee-menu/issues"
+  },
+  "homepage": "https://github.com/NightingaleMedia/sleepybee-menu#readme",
+  "dependencies": {
+    "papaparse": "^5.2.0"
+  }
+}
