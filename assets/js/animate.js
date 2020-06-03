@@ -8,7 +8,8 @@ let root = document.documentElement;
 
 document.addEventListener('scroll', handleScroll)
 function handleOrder(){
-    this.firstElementChild.classList.toggle('shown')
+    this.previousElementSibling.classList.toggle('shown')
+    this.previousElementSibling.classList.contains('shown') ? this.innerText = 'x' : this.innerText = 'Order Online';
 }
 function setHeaderHeight(){
         let menuHeight = ((sectionHeader[1].offsetHeight) * (sectionHeader.length + 1))
@@ -19,6 +20,7 @@ function setHeaderHeight(){
         }
 }
 function initialize(){
+
     // turn on toggling
     sectionHeader.forEach(section => section.addEventListener('click', toggleSection))
     // handle the order
@@ -31,6 +33,9 @@ function initialize(){
     };
     setHeaderHeight();
     //determine window height
+
+    //handle scrolling feature
+    
 
 }
 function getOpenSection() {
@@ -73,4 +78,4 @@ function toggleSection() {
     }
 }
 
-window.addEventListener('load', initialize)
+initialize();

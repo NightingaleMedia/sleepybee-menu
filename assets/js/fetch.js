@@ -2,9 +2,7 @@ import * as parse from './parse.js';
 import {menuItem, MenuSubSection, endNotes} from './builder.js'
 //fetches the endpoint
 function buildMenuItems(itemArray, section) {
-    console.log('building items')
         itemArray.forEach(item => {
-    
             if(item.price == '' && item.title != '' && item.isItem == ''){
                 let createdCat = new MenuSubSection(item);
                 section.appendChild(createdCat.render())
@@ -19,7 +17,7 @@ function buildMenuItems(itemArray, section) {
         })
         let headItem = {
             'title' : 'Dietary Notes',
-            'desc': `Bee Careful: Many items on our menu contain nuts or other potential allergens. Please let us know if you have any allergy concerns. If in doubt, please ask!While we have systems in place to reduce exposure, we must work together. Your health is our priority!`
+            'desc': `Bee Careful: Many items on our menu contain nuts or other potential allergens. Please let us know if you have any allergy concerns. If in doubt, please ask!  While we have systems in place to reduce exposure, we must work together. Your health is our priority!`
         }
             let head = new MenuSubSection(headItem);
             let end = new endNotes();
@@ -28,16 +26,12 @@ function buildMenuItems(itemArray, section) {
 
 }
 
-
 function build() {
   const section = document.querySelectorAll('.section--menucontent')
-    console.log(section.length)
 //   section.forEach(sect => buildMenuItems(items, sect))
   for(let i =  1;  i <= section.length; i++){
         parse.execute(i).then(result => buildMenuItems(result, section[i-1]))
   }
-    // buildMenuItems(items)
-
 }
 
 build();
