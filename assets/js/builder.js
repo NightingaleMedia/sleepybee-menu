@@ -54,7 +54,35 @@ class menuItem {
     }
 }
 
+class endNotes{
+    constructor() {
+        this.container = document.createElement('article')
+    
+        this.itemContents = `
+            <div class="menu-item--title">Menu Notes: <br>
+        
+            </div>
+            <div class = "menu-item--description"> <br>
+            <span class="gf"></span> Gluten Free <br><br>
+            <span class="v"></span> Vegan <br><br>
+            <span class="s"></span> Contains Soy <br><br>
+            <span class="n"></span> Contains Nuts<br><br>
+          * Consuming raw or undercooked foods like eggs, meats, and shellfish may increase your risk of foodborne illness.
+            </div> 
+            <div class = "menu-item--price" ></div> 
+            <div class = "menu-item--notes" ></div>`;
+        this.container.innerHTML = this.itemContents;
+
+    }
+
+    render() {
+        return this.container;
+    }
+
+}
+
 export {
     menuItem,
-    MenuSubSection
+    MenuSubSection,
+    endNotes
 }

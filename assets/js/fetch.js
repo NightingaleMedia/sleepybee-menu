@@ -1,5 +1,5 @@
 import * as parse from './parse.js';
-import {menuItem, MenuSubSection} from './builder.js'
+import {menuItem, MenuSubSection, endNotes} from './builder.js'
 //fetches the endpoint
 function buildMenuItems(itemArray, section) {
     console.log('building items')
@@ -14,11 +14,17 @@ function buildMenuItems(itemArray, section) {
             }
             else if(item.isItem == 'TRUE'){
                 let createdItem = new menuItem(item)
-            
                 section.appendChild(createdItem.render())
-            }
-            
+            }     
         })
+        let headItem = {
+            'title' : 'Dietary Notes',
+            'desc': `Bee Careful: Many items on our menu contain nuts or other potential allergens. Please let us know if you have any allergy concerns. If in doubt, please ask!While we have systems in place to reduce exposure, we must work together. Your health is our priority!`
+        }
+            let head = new MenuSubSection(headItem);
+            let end = new endNotes();
+            section.appendChild(head.render())
+            section.appendChild(end.render())
 
 }
 

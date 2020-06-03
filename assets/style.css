@@ -59,6 +59,31 @@ h1 {
     cursor: pointer;
 }
 
+.order-now>div {
+    position: absolute;
+    visibility: hidden;
+    transform: translate(0em, 0em);
+    z-index: -1;
+    background-blend-mode: exclusion;
+    transition: all 0.2s;
+    opacity: 0;
+}
+
+.order-now>div.shown {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0em, -4em);
+}
+
+.sub-location {
+    /* position: absolute; */
+    margin: 0.25em;
+    width: 150px;
+    background-color: var(--sb-purple--dark);
+    font-size: 1em;
+    z-index: 80;
+}
+
 .menu--header {
     height: 80vh;
     display: flex;
@@ -211,7 +236,7 @@ article {
     font-weight: 800;
 }
 
-.menu-item--title>span {
+.menu-item--title>span, .menu-item--description>span {
     margin-left: 2px;
     height: 25px;
     width: 25px;

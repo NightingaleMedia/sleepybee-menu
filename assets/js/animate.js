@@ -1,10 +1,15 @@
 const menuSection = document.querySelectorAll('section')
 const sectionHeader = document.querySelectorAll('.section--header')
 const menuHeader = document.querySelector('.menu--header')
+const orderButton = document.querySelector('.order-now')
+const blueash = document.querySelector('.blueash')
+const oakley = document.querySelector('.oakley')
 let root = document.documentElement;
 
 document.addEventListener('scroll', handleScroll)
-
+function handleOrder(){
+    this.firstElementChild.classList.toggle('shown')
+}
 function setHeaderHeight(){
         let menuHeight = ((sectionHeader[1].offsetHeight) * (sectionHeader.length + 1))
         let hasOpen = [...menuSection].find(section => section.classList.contains('open'))
@@ -16,6 +21,14 @@ function setHeaderHeight(){
 function initialize(){
     // turn on toggling
     sectionHeader.forEach(section => section.addEventListener('click', toggleSection))
+    // handle the order
+    orderButton.addEventListener('click', handleOrder)
+    oakley.onclick = function () {
+        window.location.href = 'https://sleepybeecafe.hrpos.heartland.us/'
+    };
+    blueash.onclick = function () {
+        window.location.href = 'https://sleepybeecafeblueash.hrpos.heartland.us/'
+    };
     setHeaderHeight();
     //determine window height
 
