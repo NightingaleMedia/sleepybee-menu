@@ -40,7 +40,7 @@ h1 {
     color: var(--sb-orange--dark);
 }
 
-.order-now{
+.order-now {
     height: 120px;
     width: 120px;
     background-color: var(--sb-blue--med);
@@ -121,9 +121,9 @@ section:last-of-type {
 .section--header>span {
     /* display: none; */
     transform-origin: center;
-    transform: translate(40px, 0px);
+    transform: translate(40px, -3px);
     font-weight: 600;
-    transition-delay:  1s ;
+    transition-delay: 1s;
     transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     line-height: 0;
     font-size: 120%;
@@ -133,9 +133,16 @@ section:last-of-type {
     visibility: hidden;
     display: none;
     max-width: 550px;
-    margin-top: 30px;
+    margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.section--menucontent::after {
+    height: 50px;
+    content: " ";
+    display: block;
+    background-color: none;
 }
 
 .open {
@@ -149,17 +156,20 @@ section:last-of-type {
     justify-self: start;
     position: sticky;
     margin-top: 0em;
-    top: -1px;
+    top: -2px;
+    overflow-x: hidden;
 }
 
 .open>.section--header>span {
     display: block;
-    transform: rotate(45deg) translate(70px, -70px);
+    transform: rotate(45deg) translate(40px, -43px);
+    /* overflow-x: hidden; */
 }
 
 .open>.section--menucontent {
     visibility: visible;
     display: block;
+    /* overflow-x: hidden; */
     padding: 1em;
 }
 
@@ -170,7 +180,8 @@ section:last-of-type {
 }
 
 .mini-menu>.section--header {
-    margin-top: 0em;
+    margin-top: 0;
+    padding: 0.15em;
 }
 
 .menu-content--header {
@@ -178,7 +189,6 @@ section:last-of-type {
     height: 50px;
     position: sticky;
     top: 54px;
-
     background-color: white;
     font-size: 1.75em;
     font-weight: 800;
@@ -211,26 +221,33 @@ article {
     /* background-color: var(--sb-orange--med); */
 }
 
-span.vegan {
-    background-image: url('assets/img/icon--v.png');
+span.v {
+    background-image: url('../assets/img/icon--v.png');
 }
 
-span.nuts {
-    background-image: url('assets/img/icon--n.png');
+span.n {
+    background-image: url('../assets/img/icon--n.png');
 }
 
 span.gf {
-    background-image: url('assets/img/icon--gf.png');
+    background-image: url('../assets/img/icon--gf.png');
 }
 
-span.s{
-    background-image: url('assets/img/icon--s.png');
+span.s {
+    background-image: url('../assets/img/icon--s.png');
 }
+
 .menu-item--price {
     margin-top: 10px;
     font-weight: 800;
 }
 
 .menu-item--notes {
+    margin-top: 0.5em;
     color: rgb(78, 78, 78);
+}
+
+.menu-item--notes>span {
+    margin-top: 0.5em;
+    display: block;
 }
