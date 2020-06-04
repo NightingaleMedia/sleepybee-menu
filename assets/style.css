@@ -13,6 +13,7 @@
     --sb-blue--med: rgb(67, 197, 228);
     --sb-green--med: rgb(150, 202, 79);
     --sb-brown--med: rgb(195, 131, 85);
+    --sb-grey: #565759;
     --sb-font1: questa-slab, serif;
     --sb-font2: 'questa_slabbold', sans-serif;
     --mini-menu-size: 50px;
@@ -69,7 +70,7 @@ h1 {
     z-index: 80;
     bottom: 28px;
     right: 100px;
-    height: 0px;
+    /* height: 0px; */
     display: none;
 }
 
@@ -84,7 +85,7 @@ h1 {
 }
 
 .sub-location {
-    /* position: absolute; */
+    position: relative;
     margin: 0.25em;
     width: 150px;
     padding: 0.25em;
@@ -109,7 +110,6 @@ h1 {
     width: 150px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .menu-collapsed {
@@ -173,6 +173,7 @@ section:last-of-type {
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
+    color: var(--sb-grey);
 }
 
 .section--menucontent::after {
@@ -229,7 +230,7 @@ section:last-of-type {
     background-color: white;
     font-size: 1.75em;
     font-weight: 800;
-    color: var(--sb-blue--dark);
+    color: var(--sb-purple--dark);
     font-family: var(--sb-font1);
 }
 
@@ -241,6 +242,7 @@ article {
     border-top: 1px dotted grey;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: var(--sb-grey);
 }
 
 .menu-item--title {
