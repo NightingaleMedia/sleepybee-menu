@@ -16,8 +16,7 @@ function setHeaderHeight(){
         let menuHeight = ((sectionHeader[1].offsetHeight) * (sectionHeader.length + 1))
         let hasOpen = [...menuSection].find(section => section.classList.contains('open'))
         if(hasOpen == undefined){ 
-        menuHeader.style.height = `${window.innerHeight - menuHeight}px`;
-
+        menuHeader.style.height = `${window.innerHeight}px`;
         menuHeader.classList.remove('menu-collapsed');
         }
 }
