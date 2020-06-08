@@ -21,7 +21,7 @@ function setHeaderHeight(){
         }
 }
 function initialize(){
-
+    
     // turn on toggling
     sectionHeader.forEach(section => section.addEventListener('click', toggleSection))
     // handle the order
@@ -79,4 +79,10 @@ function toggleSection() {
     }
 }
 
+
+
+location.reload(true);
 initialize();
+
+  
+
