@@ -36,30 +36,6 @@ function build() {
 
 build();
 
-// console.log(parse.execute('1'))
-// function printLines(entries) {
-//     const parsed = JSON.parse(entries)
-//     let menuItems = entries.split('_cokwr: ');
-//     console.log(entries)
-
-//     push entries to an array
-//     entries.forEach(entry => {
-//         if (entry.content.$t === '') {
-//             return;
-//         } else {
-//             menuItems.push((entry.content.$t).slice(7, -1))
-//         }
-//     })
-
-//     buildMenuItems(menuItems)
-
-
-// }
-// fetch(`https://spreadsheets.google.com/feeds/list/1VtHQCB_jq070F9g5LwxwDpcqonEQhVmpzGzdGo_mq_s/od6/public/basic?alt=json`)
-//     .then(sheet => sheet.json())
-//     .then(menu => printLines(menu.feed.entry));
-
-
 
 export {
     build

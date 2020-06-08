@@ -19,10 +19,20 @@
     --mini-menu-size: 50px;
 }
 
+html {
+    min-height: 100vh;
+    background-color: black;
+}
+
 body {
     font-family: foco, sans-serif;
     font-weight: 400;
     font-style: normal;
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    background-color: white;
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 *, input[type="search"] {
@@ -35,15 +45,17 @@ body {
 }
 
 h1 {
-    font-family: foco, sans-serif;
+    font-family: var(--sb-font1), sans-serif;
     font-weight: 200;
     font-size: 1.5em;
-    color: var(--sb-orange--dark);
+    margin-top: 1em;
+    color: var(--sb-purple--dark);
 }
 
 .order-now {
     height: 120px;
     width: 120px;
+    margin: 0.5em;
     background-color: var(--sb-blue--med);
     border-radius: 100%;
     color: white;
@@ -54,10 +66,37 @@ h1 {
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 2%;
-    right: 2%;
+    bottom: 0;
+    right: 0;
     z-index: 100;
     cursor: pointer;
+}
+
+.scroll-down {
+    font-size: 2em;
+    margin-top: 2em;
+    color: var(--sb-grey);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+    transition: all 0.5s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .location-holder {
@@ -126,6 +165,10 @@ h1 {
     display: none;
 }
 
+.menu-collapsed>.scroll-down {
+    display: none;
+}
+
 section {
     position: relative;
     height: 9vh;
@@ -133,9 +176,8 @@ section {
     transition: all 0.4s ease;
     border-top: 1px dotted #181818;
     overflow: hidden;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
+    display: flex;
+
 }
 
 section:last-of-type {
@@ -149,9 +191,9 @@ section:last-of-type {
     display: flex;
     align-items: center;
     justify-content: center;
+    vertical-align: middle;
     width: 100%;
-    padding: 0.5em;
-    margin-top: 0.5em;
+
     cursor: pointer;
 }
 
@@ -188,13 +230,17 @@ section:last-of-type {
     background-color: #fff;
     overflow: scroll;
 }
-
+section.open{
+    display: block;
+}
 .open>.section--header {
     background-color: var(--sb-yellow--dark);
     justify-self: start;
     position: sticky;
     margin-top: 0em;
-    top: -2px;
+    transition: all 1s ease;
+    height: 55px;
+    top: -1px;
     overflow-x: hidden;
 }
 
@@ -218,8 +264,8 @@ section:last-of-type {
 }
 
 .mini-menu>.section--header {
-    margin-top: 0;
-    padding: 0.15em;
+    margin: 0;
+
 }
 
 .menu-content--header {
