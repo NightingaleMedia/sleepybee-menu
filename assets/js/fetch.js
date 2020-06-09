@@ -30,7 +30,14 @@ function build() {
   const section = document.querySelectorAll('.section--menucontent')
 //   section.forEach(sect => buildMenuItems(items, sect))
   for(let i =  1;  i <= section.length; i++){
-        parse.execute(i).then(result => buildMenuItems(result, section[i-1]))
+        parse.execute(i)
+        
+        .then(result => buildMenuItems(result, section[i-1]))
+        .catch(err => { 
+            parse.executeSaved(i)
+            .then(result => buildMenuItems(result, section[i-1]))
+            .then(console.log("There was an error in fetching the google sheet, error code: " + err))
+        })
   }
 }
 

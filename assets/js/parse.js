@@ -6,7 +6,7 @@ const execute = (n) => {
     let idObj = {
         '1' : '0',
         '2': '492911777',
-        '3': '1434603219'
+        '3': '14346032192'
     }
     return d3.dsv(',', url + '&' + `gid=${idObj[n]}`, function (d) {
             return {
@@ -18,7 +18,32 @@ const execute = (n) => {
                 notes: d.AdditionalNotes,
                 isItem: d.menuItem
             };
-        }).then(result  =>  result);
+        })
+        .then(result  =>  result);
+
+}
+
+const executeSaved = (n) => {
+     let idObj = {
+        '1': 'SleepyBee_DineIn',
+        '2': 'SleepyBee_Drinks',
+        '3': 'SleepyBee_CarryOut'
+    }
+    // directory for the live site just needs the folder name
+    // using ../ doesn't work.
+    
+    return d3.dsv(',', `csv-src/${idObj[n]}.csv`, function (d) {
+            return {
+                category: d.Category,
+                title: d.Title,
+                dietnotes: d.DietaryNotes,
+                desc: d.Description,
+                price: d.Price,
+                notes: d.AdditionalNotes,
+                isItem: d.menuItem
+            };
+        })
+        .then(result => result);
 
 }
 
@@ -27,5 +52,6 @@ const execute = (n) => {
 
 
 export {
-    execute
+    execute,
+    executeSaved
 }
