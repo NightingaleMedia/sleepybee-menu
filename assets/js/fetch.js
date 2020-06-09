@@ -36,7 +36,7 @@ function build() {
         .catch(err => { 
             parse.executeSaved(i)
             .then(result => buildMenuItems(result, section[i-1]))
-            .then(console.log(err))
+            .then(console.log("There was an error in fetching the google sheet, error code: " + err))
         })
   }
 }
