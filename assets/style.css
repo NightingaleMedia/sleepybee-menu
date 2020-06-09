@@ -143,7 +143,7 @@ h1 {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: all 0.8s ease;
+    transition: all 0.4s ease;
 }
 
 .menu-logo {
@@ -204,8 +204,8 @@ section:last-of-type {
     transform-origin: center;
     transform: translate(40px, -3px);
     font-weight: 600;
-    transition-delay: 1s;
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     line-height: 0;
     font-size: 120%;
 }
