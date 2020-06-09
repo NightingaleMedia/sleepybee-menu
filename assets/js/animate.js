@@ -8,6 +8,7 @@ const oakley = document.querySelector('.oakley')
 let root = document.documentElement;
 
 document.addEventListener('scroll', handleScroll)
+
 function handleOrder(){
     this.previousElementSibling.classList.toggle('shown')
     this.previousElementSibling.classList.contains('shown') ? this.innerText = 'x' : this.innerText = 'Order Online';
@@ -21,7 +22,8 @@ function setHeaderHeight(){
         }
 }
 function initialize(){
-    
+    const scrollNow = document.querySelector('.scroll-down')
+    scrollNow.addEventListener('click', handleScroll);
     // turn on toggling
     sectionHeader.forEach(section => section.addEventListener('click', toggleSection))
     // handle the order
@@ -50,7 +52,6 @@ const addMiniMenu = () => {
 }
 
 function handleScroll(e) {
-   
     menuHeader.removeAttribute('style')
     menuHeader.classList.add('menu-collapsed')
 }
@@ -81,7 +82,7 @@ function toggleSection() {
 
 
 
-location.reload(true);
+
 initialize();
 
   
