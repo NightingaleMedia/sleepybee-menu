@@ -240,7 +240,7 @@ section.open{
     justify-self: start;
     position: sticky;
     margin-top: 0em;
-    transition: all 1s ease;
+    /* transition: all 1s ease; */
     height: 55px;
     top: -1px;
     overflow-x: hidden;
