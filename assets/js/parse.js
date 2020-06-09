@@ -29,6 +29,9 @@ const executeSaved = (n) => {
         '2': 'SleepyBee_Drinks',
         '3': 'SleepyBee_CarryOut'
     }
+    // directory for the live site just needs the folder name
+    // using ../ doesn't work.
+    
     return d3.dsv(',', `csv-src/${idObj[n]}.csv`, function (d) {
             return {
                 category: d.Category,
