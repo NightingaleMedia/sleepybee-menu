@@ -29,7 +29,7 @@ const executeSaved = (n) => {
         '2': 'SleepyBee_Drinks',
         '3': 'SleepyBee_CarryOut'
     }
-    return d3.dsv(',', `menu/csv-src/${idObj[n]}.csv`, function (d) {
+    return d3.dsv(',', `/csv-src/${idObj[n]}.csv`, function (d) {
             return {
                 category: d.Category,
                 title: d.Title,
