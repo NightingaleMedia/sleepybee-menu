@@ -143,7 +143,7 @@ h1 {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    /* transition: all 0.4s ease; */
+    transition: height 0.8s ease;
 }
 
 .menu-logo {
@@ -179,7 +179,6 @@ section {
     border-top: 1px dotted #181818;
     overflow: hidden;
     display: flex;
-
 }
 
 section:last-of-type {
@@ -195,7 +194,7 @@ section:last-of-type {
     justify-content: center;
     vertical-align: middle;
     width: 100%;
-
+    position: sticky;
     cursor: pointer;
 }
 
@@ -204,7 +203,6 @@ section:last-of-type {
     transform-origin: center;
     transform: translate(40px, -3px);
     font-weight: 600;
-
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     line-height: 0;
     font-size: 120%;
@@ -232,9 +230,11 @@ section:last-of-type {
     background-color: #fff;
     overflow: scroll;
 }
-section.open{
+
+section.open {
     display: block;
 }
+
 .open>.section--header {
     background-color: var(--sb-yellow--dark);
     justify-self: start;
@@ -267,7 +267,6 @@ section.open{
 
 .mini-menu>.section--header {
     margin: 0;
-
 }
 
 .menu-content--header {
