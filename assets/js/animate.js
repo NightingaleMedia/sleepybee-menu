@@ -9,7 +9,8 @@ let root = document.documentElement;
 
 document.addEventListener('scroll', handleScroll)
 
-function handleOrder(){
+function handleOrder(e){
+    e.preventDefault();
     this.previousElementSibling.classList.toggle('shown')
     this.previousElementSibling.classList.contains('shown') ? this.innerText = 'x' : this.innerText = 'Order Online';
 }
@@ -24,10 +25,14 @@ function setHeaderHeight(){
 function initialize(){
     const scrollNow = document.querySelector('.scroll-down')
     scrollNow.addEventListener('click', handleScroll);
+    scrollNow.addEventListener('touchstart', handleScroll)
     // turn on toggling
-    sectionHeader.forEach(section => section.addEventListener('click', toggleSection))
+    sectionHeader.forEach(section => {
+        section.addEventListener('click', toggleSection)
+        section.addEventListener('touchstart', toggleSection)
+    })
     // handle the order
-    orderButton.addEventListener('click', handleOrder)
+    orderButton.addEventListener('click touchstart', handleOrder)
     oakley.onclick = function () {
         window.location.href = 'https://sleepybeecafe.hrpos.heartland.us/'
     };
@@ -56,7 +61,8 @@ function handleScroll(e) {
     menuHeader.classList.add('menu-collapsed')
 }
 
-function toggleSection() {
+function toggleSection(e) {
+    e.preventDefault();
     let parent = this.parentElement
 
     // console.log(this)
