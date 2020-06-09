@@ -6,7 +6,7 @@ const execute = (n) => {
     let idObj = {
         '1' : '0',
         '2': '492911777',
-        '3': '1434603219'
+        '3': '14346032192'
     }
     return d3.dsv(',', url + '&' + `gid=${idObj[n]}`, function (d) {
             return {
