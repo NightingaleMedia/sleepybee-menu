@@ -55,12 +55,14 @@ h1 {
 .order-now {
     height: 120px;
     width: 120px;
+    cursor: pointer;
     margin: 0.5em;
     background-color: var(--sb-blue--med);
     border-radius: 100%;
     color: white;
     font-size: 180%;
     text-align: center;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
