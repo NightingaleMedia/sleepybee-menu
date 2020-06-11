@@ -32,6 +32,7 @@ body {
     min-height: 100vh;
     position: relative;
     background-color: white;
+    -webkit-transform: translateZ(0);
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
