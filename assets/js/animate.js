@@ -2,17 +2,18 @@ const menuSection = document.querySelectorAll('section')
 const sectionHeader = document.querySelectorAll('.section--header')
 const menuHeader = document.querySelector('.menu--header')
 const orderButton = document.querySelector('.order-now')
-const locWrap = document.querySelector('.location-holder')
-const blueash = document.querySelector('.blueash')
-const oakley = document.querySelector('.oakley')
+// const locWrap = document.querySelector('.location-holder')
+// const blueash = document.querySelector('.blueash')
+// const oakley = document.querySelector('.oakley')
 let root = document.documentElement;
 
 document.addEventListener('scroll', handleScroll)
 
 function handleOrder(e){
     e.preventDefault();
-    this.previousElementSibling.classList.toggle('shown')
-    this.previousElementSibling.classList.contains('shown') ? this.innerText = 'x' : this.innerText = 'Order Online';
+    this.classList.toggle('order-now-expand')
+
+ 
 }
 function setHeaderHeight(){
         let menuHeight = ((sectionHeader[1].offsetHeight) * (sectionHeader.length + 1))
@@ -34,12 +35,12 @@ function initialize(){
     // handle the order
     orderButton.addEventListener('click', handleOrder)
     orderButton.addEventListener('touchstart', handleOrder)
-    oakley.onclick = function () {
-        window.location.href = 'https://sleepybeecafe.hrpos.heartland.us/'
-    };
-    blueash.onclick = function () {
-        window.location.href = 'https://sleepybeecafeblueash.hrpos.heartland.us/'
-    };
+    // oakley.onclick = function () {
+    //     window.location.href = 'https://sleepybeecafe.hrpos.heartland.us/'
+    // };
+    // blueash.onclick = function () {
+    //     window.location.href = 'https://sleepybeecafeblueash.hrpos.heartland.us/'
+    // };
     setHeaderHeight();
     //determine window height
 

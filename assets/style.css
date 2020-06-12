@@ -73,6 +73,12 @@ h1 {
     right: 0;
     z-index: 100;
     cursor: pointer;
+    animation: pulse 1.5s infinite;
+    transition: all 0.2s ease !important;
+}
+
+.order-now>div {
+    display: none;
 }
 
 .scroll-down {
@@ -87,7 +93,7 @@ h1 {
 
 .pulse {
     animation: pulse 1.5s infinite;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 @keyframes pulse {
@@ -102,28 +108,57 @@ h1 {
     }
 }
 
-.location-holder {
-    position: absolute;
-    visibility: hidden;
-    transform: translate(10em, 0em);
-    background-blend-mode: exclusion;
-    transition: all 0.2s;
-    opacity: 0;
-    z-index: 80;
-    bottom: 28px;
-    right: 100px;
-    /* height: 0px; */
-    display: none;
+.order-now-expand {
+    height: 90vh;
+    width: 90%;
+    border-radius: 0;
+    transition: all 0.2s ease !important;
+    animation: none !important;
+    /* bottom: auto;
+    right: auto; */
+    right: 5%;
+    bottom: 5%;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    transform-origin: center;
+    background-color:rgba(0,0,0,0.9);
+ 
 }
 
-.shown {
+.order-now-expand>div {
+    display: flex;
+    flex-direction: column;
+    min-width: 299px;
+    max-width: 300px;
+}
+
+.location {
+    margin-top: 2vh;
+    height: 22vh;
+    width: 100%;
+    background-color: grey;
+    padding: 0.5em;
+    opacity: 1 !important;
+    font-size: 0.75em;
+}
+.location > button{
     display: block;
-    height: auto;
-    opacity: 1;
-    bottom: 28px;
-    right: 100px;
-    visibility: visible;
-    transform: translate(1em, 0em);
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: 0.75em;
+    color: white;
+    height: 30px;
+    background-color: var(--sb-yellow--dark);
+}
+
+.exit {
+    position: absolute;
+    font-size: 3em;
+    top: 0;
+    right: 0;
+    transform: translate(110px, -15px) rotate(45deg);
 }
 
 .sub-location {
