@@ -32,7 +32,8 @@ function initialize(){
         section.addEventListener('touchstart', toggleSection)
     })
     // handle the order
-    orderButton.addEventListener('click touchstart', handleOrder)
+    orderButton.addEventListener('click', handleOrder)
+    orderButton.addEventListener('touchstart', handleOrder)
     oakley.onclick = function () {
         window.location.href = 'https://sleepybeecafe.hrpos.heartland.us/'
     };
