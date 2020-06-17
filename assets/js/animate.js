@@ -48,18 +48,22 @@ let links = {
                     e.target !== exit) {
                     const locationSelected = findLocation(e.target)
                     let button = locationSelected.querySelector('button')
+                    let phone = links[locationSelected.dataset.loc].phone;
+                    let webLink = links[locationSelected.dataset.loc].href;
 
                     locationSelected.classList.toggle('location-selected')
                     if (locationSelected.classList.contains('location-selected')) {
                         button.innerHTML = `
                 <div class="call"
-                onclick={location.href="tel:${links[locationSelected.dataset.loc].phone}"}>
+                onclick="{location.href='tel:${phone}'}"
+                ontouchstart="{location.href='tel:${phone}'}">
                 <i class="fas fa-phone"></i>
                    Call Us!
                    
                 </div>
                 <div class="online" 
-                onclick={location.href="${links[locationSelected.dataset.loc].href}"}>
+                onclick={location.href="${webLink}"}
+                ontouchstart={location.href="${webLink}"}>
                 <i class="fas fa-globe"></i>
                    Order Online
                 </div>
