@@ -10,15 +10,15 @@ let root = document.documentElement;
 let links = {
         'oakley': {
             'href': 'https://sleepybeecafe.hrpos.heartland.us/',
-            'phone': '5555555'
+            'phone': '5135332339'
         },
         'blueash': {
             'href': 'https://sleepybeecafeblueash.hrpos.heartland.us/menu',
-            'phone': '5555555'
+            'phone': '5132412339'
         },
         'downtown': {
             'href': 'https://sleepybeecafedowntown.hrpos.heartland.us/menu',
-            'phone': '5555555'
+            'phone': '5133812339'
         }
     }
 
