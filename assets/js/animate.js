@@ -101,11 +101,8 @@ let links = {
             })
             // handle the order
             orderButton.addEventListener('click', handleOrder)
-            orderButton.addEventListener('touchstart', handleOrder)
+            orderButton.addEventListener('touchend', handleOrder)
 
-            // blueash.onclick = function () {
-            //     window.location.href = 'https://sleepybeecafeblueash.hrpos.heartland.us/'
-            // };
             setHeaderHeight();
             //determine window height
 
