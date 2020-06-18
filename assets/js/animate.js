@@ -7,6 +7,7 @@ const locWrap = document.querySelector('.location-holder')
 // const oakley = document.querySelector('.oakley')
 let root = document.documentElement;
 
+
 let links = {
         'oakley': {
             'href': 'https://sleepybeecafe.hrpos.heartland.us/',
