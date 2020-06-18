@@ -64,7 +64,7 @@ let links = {
                 <div class="online" 
                 onclick={location.href="${webLink}"}
                 ontouchstart={location.href="${webLink}"}>
-                <i class="fas fa-globe"></i>
+                <i class="fas fa-utensils"></i>
                    Order Online
                 </div>
                 `    
