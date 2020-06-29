@@ -94,11 +94,15 @@ let links = {
         function initialize() {
             const scrollNow = document.querySelector('.scroll-down')
             scrollNow.addEventListener('click', handleScroll);
-            scrollNow.addEventListener('touchstart', handleScroll)
+            scrollNow.addEventListener('touchstart', handleScroll, {
+                passive : true
+            })
             // turn on toggling
             sectionHeader.forEach(section => {
                 section.addEventListener('click', toggleSection)
-                section.addEventListener('touchstart', toggleSection)
+                section.addEventListener('touchstart', toggleSection, {
+                    passive: true
+                })
             })
             // handle the order
             orderButton.addEventListener('click', handleOrder)
@@ -115,7 +119,7 @@ let links = {
         }
 
         const addMiniMenu = () => {
-            let result = ((window.innerHeight - (menuHeader.offsetHeight + getOpenSection().offsetHeight + locWrap.offsetHeight)) / menuSection.length) + 10;
+            let result = ((window.innerHeight - (menuHeader.offsetHeight + getOpenSection().offsetHeight)) / menuSection.length) + 10;
             (result < 25) ? result = 30: result;
             root.style.setProperty(`--mini-menu-size`, result + 'px');
         }
