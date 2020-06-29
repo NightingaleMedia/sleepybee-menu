@@ -1,5 +1,6 @@
  const preloader = document.querySelector('.preloader')
 // document.firstElementChild.appendChild(preloader)
+console.log(preloader)
 
 const preload = () => {
     let i = 0;
