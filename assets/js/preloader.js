@@ -1,8 +1,9 @@
- const preloader = document.querySelector('.preloader')
+
 // document.firstElementChild.appendChild(preloader)
-console.log(preloader)
+
 
 const preload = () => {
+    const preloader = document.querySelector('.preloader')
     let i = 0;
     let text = 'loading...'
     const updateText = (i) => {
@@ -19,6 +20,7 @@ const preload = () => {
 preload();
 
 window.onload = function () { 
+    const preloader = document.querySelector('.preloader')
     preloader.classList.add('swiped-up')
     setTimeout(()=>{
         document.body.removeChild(document.body.firstElementChild)
