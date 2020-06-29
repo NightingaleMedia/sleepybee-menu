@@ -7,7 +7,10 @@ const preload = () => {
     let i = 0;
     let text = 'loading...'
     const updateText = (i) => {
-        preloader.firstElementChild.innerText = `${text.slice(0,i)}`
+        const t = preloader.firstElementChild;
+        t.innerText = `${text.slice(0,i)}`
+        t.innerText.length < 1 ? t.innerText = ' ' : null;
+        
     }
     setInterval(() => {
         i++
