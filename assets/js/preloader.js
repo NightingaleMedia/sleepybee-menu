@@ -3,7 +3,7 @@
 
 const preload = () => {
     let i = 0;
-    let text = 'loading...'
+    let text = 'loading... '
     const updateText = (i) => {
         preloader.firstElementChild.innerText = `${text.slice(0,i)}`
     }
