@@ -24,9 +24,9 @@ preload();
 
 window.onload = function () { 
     const preloader = document.querySelector('.preloader')
-    // preloader.classList.add('swiped-up')
+    preloader.classList.add('swiped-up')
     setTimeout(()=>{
-        // document.body.removeChild(document.body.firstElementChild)
+        document.body.removeChild(document.body.firstElementChild)
     },1000)
  
     // preloader.classList.add('swiped-up')
