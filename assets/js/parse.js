@@ -8,6 +8,7 @@ const execute = (n) => {
         '2': 'carry_out',
         '3': 'drinks'
     }
+    console.log(url + idObj[n] + '.php')
     return d3.dsv(',', url + `${idObj[n]}.php`, function (d) {
             return {
                 category: d.Category,
@@ -31,6 +32,7 @@ const executeSaved = (n) => {
     }
     // directory for the live site just needs the folder name
     // using ../ doesn't work.
+
     
     return d3.dsv(',', `csv-src/${idObj[n]}.csv`, function (d) {
             return {
