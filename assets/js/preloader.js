@@ -24,10 +24,15 @@ preload();
 
 window.onload = function () { 
     const preloader = document.querySelector('.preloader')
+    setTimeout(() => {
+    
     preloader.classList.add('swiped-up')
+    }, 
+        1000)
+
     setTimeout(()=>{
         document.body.removeChild(document.body.firstElementChild)
-    },1000)
- 
-    // preloader.classList.add('swiped-up')
+    },
+        3000)
+
 }
