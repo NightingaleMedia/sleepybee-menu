@@ -2,13 +2,14 @@
 import * as fetch from './fetch.js'
 
 const execute = (n) => {
-    let url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRyu85xIQj8N-3tG6uDkql7Azd9CKxta9YkG_PLgl5r1WAgUkMrTFO2WQfzL3sPqb0k2GcOMfs7L-QF/pub?output=csv'
+    let url = 'csv-src/sb_'
     let idObj = {
-        '1' : '0',
-        '2': '492911777',
-        '3': '1434603219'
+        '1' : 'dine_in',
+        '2': 'carry_out',
+        '3': 'drinks'
     }
-    return d3.dsv(',', url + '&' + `gid=${idObj[n]}`, function (d) {
+    console.log(url + idObj[n] + '.php')
+    return d3.dsv(',', url + `${idObj[n]}.php`, function (d) {
             return {
                 category: d.Category,
                 title: d.Title,
@@ -31,6 +32,7 @@ const executeSaved = (n) => {
     }
     // directory for the live site just needs the folder name
     // using ../ doesn't work.
+
     
     return d3.dsv(',', `csv-src/${idObj[n]}.csv`, function (d) {
             return {
