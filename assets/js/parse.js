@@ -75,6 +75,7 @@ const executeSaved = (n) => {
 
 
 export {
-    execute,
-    executeSaved
+    executeSheets,
+    executeSaved,
+    executePHP
 }
