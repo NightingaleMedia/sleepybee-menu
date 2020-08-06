@@ -94,15 +94,15 @@ let links = {
         function initialize() {
             const scrollNow = document.querySelector('.scroll-down')
             scrollNow.addEventListener('click', handleScroll);
-            scrollNow.addEventListener('touchstart', handleScroll, {
-                passive : false
-            })
+            // scrollNow.addEventListener('touchstart', handleScroll, {
+            //     passive : false
+            // })
             // turn on toggling
             sectionHeader.forEach(section => {
                 section.addEventListener('click', toggleSection)
-                section.addEventListener('touchstart', toggleSection, {
-                    passive: false
-                })
+                // section.addEventListener('touchstart', toggleSection, {
+                //     passive: false
+                // })
             })
             // handle the order
             orderButton.addEventListener('click', handleOrder)
