@@ -30,7 +30,7 @@ function build() {
   const section = document.querySelectorAll('.section--menucontent')
 //   section.forEach(sect => buildMenuItems(items, sect))
   for(let i =  1;  i <= section.length; i++){
-        parse.executeSheets(i)
+        parse.executePHP(i)
         
         .then(result => buildMenuItems(result, section[i-1]))
         .catch(err => { 
